@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Rubik:wght@500&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -10,67 +11,129 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 
-a {
-    text-decoration: none;
-    color: #333;
-    padding-right: 10px;
-}
-
-li {
-    list-style-type: none;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 #container {
     max-width: 1000px;
-    margin:  auto;
+    margin: auto;
+}
+nav ul {
+    list-style-type: none;
 }
 
-.nav {
-    display: flex;
-    padding: 20px 0;
-    align-items: center;
-    background-color: #fff;
+nav ul li a {
     color: #333;
+    padding: 10px;
+    font-size: 15px;
+    text-decoration: none;
 }
 
-.nav img {
-    width: 20%;
-    margin-right: 20px;
+nav ul li .fas {
+    margin-right: 10px;
 }
 
-.navleft .fas {
-    padding-right: 10px;
+#nav-top img {
+    width: 150px;
 }
 
-.navleft {
+nav {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#links {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-left: 30px;
 }
 
-@media screen and (max-width:567px) {
-    .nav, .navleft {
+#links div {
+    display: flex;
+}
+
+
+@media screen and (max-width:600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    #nav-top img {
+        align-self: flex-start;
+    }
+
+    #nav-top {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #links {
+        flex-direction: column;
+        width: 100%;
+        margin: 10px auto;
+        height: 100%;
+        /* padding: 5px; */
+        display: none;
+    }
+
+    #links div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a {
         display: block;
-        text-align: center;
-        padding: 10px;
-    }
-    .fas {
-        padding: 10px;
-        font-size:15px ;
     }
 
-    .banner {
-        width: 70%;
-        bottom: 25%;
+    #menu-btn {
+        padding: 5px;
+        border: 2px solid #333;
+        cursor: pointer;
+        align-self: center;
+    }
+
+    .nav .fas {
+        padding-right: 5px;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        height: 5px;
+        width: 35px;
+        background-color: #333;
+        transition: transform 1s ease;
+        margin: 5px 0px;
+    }
+
+    .turn .bar1 {
+        transform: rotate(-45deg) translate(-7px, 6px);
+    }
+
+    .turn .bar3 {
+        transform: rotate(45deg) translate(-7px, -8px);
+    }
+
+    .turn .bar2 {
+        opacity: 0;
     }
 }
+
 
 #banner {
     background: url(images/hero-bg.jpg) center/cover fixed no-repeat;
     height: 80vh;
     background-size: 100% 100%;
     position: relative;
-   
+    width: 100%;
+
 }
 
 .banner {
@@ -89,8 +152,9 @@ li {
 }
 
 .banner span {
-    color:  rgb(238, 77, 85);
+    color: rgb(238, 77, 85);
 }
+
 .p-1 {
     padding: 1.25rem;
 }
@@ -126,6 +190,9 @@ button {
         width: 70%;
         bottom: 25%;
     }
+    #banner {
+        width: 100%;
+    }
 }
 
 .text-center {
@@ -160,6 +227,7 @@ button {
 @media screen and (max-width:567px) {
     .trending-food {
         grid-template-columns: 1fr;
+        padding: 0 10px;
     }
 }
 
@@ -206,7 +274,7 @@ button {
     right: 0;
     align-self: flex-start;
     padding-right: 20px;
-    
+
 }
 
 @media screen and (max-width:567px) {
@@ -241,6 +309,7 @@ button {
     padding-top: 40px;
     display: flex;
 }
+
 .partner {
     display: flex;
     justify-content: space-between;
@@ -252,14 +321,16 @@ button {
     flex-wrap: wrap;
     padding: 40px 40px;
 }
-.partner img{
+
+.partner img {
     width: 200px;
     position: absolute;
     z-index: 0;
     bottom: 0;
     right: 0;
-    
+
 }
+
 .c-1 {
     background-color: rgb(213, 240, 240);
 }
@@ -280,17 +351,18 @@ button {
 
     .partner {
         display: block;
-        height: auto;        
+        height: auto;
     }
-    
+
     .content {
         width: auto;
     }
+
     .partner img {
         display: block;
         position: relative;
         margin: auto;
-    
+
     }
 }
 
@@ -304,8 +376,8 @@ button {
 }
 
 .restaurant {
-        box-shadow: rgba(0, 0, 0, 0.24) 1.0px 3px 8px;
-        border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 1.0px 3px 8px;
+    border-radius: 5px;
 }
 
 @media screen and (max-width:767px) {
@@ -371,7 +443,8 @@ button {
         padding: 10px auto;
     }
 
-    .footer-logo, .footer-item {
+    .footer-logo,
+    .footer-item {
         margin: 10px 0;
     }
 
